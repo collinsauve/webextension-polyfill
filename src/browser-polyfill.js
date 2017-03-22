@@ -8,10 +8,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 "use strict";
 
-let toExport;
-
 if (typeof browser !== "undefined") {
-  toExport = browser;
+  if (typeof module !== "undefined") {
+    module.exports = browser;
+  }
 } else {
   // Wrapping the bulk of this polyfill in a one-time-use function is a minor
   // optimization for Firefox. Since Spidermonkey does not fully parse the
@@ -342,10 +342,8 @@ if (typeof browser !== "undefined") {
     return wrapObject(chrome, staticWrappers, apiMetadata);
   };
 
-  toExport = wrapAPIs();
-  this.browser = toExport;
-}
-
-if (typeof module !== "undefined") {
-  module.exports = toExport;
+  this.browser = wrapAPIs();
+  if (typeof module !== "undefined") {
+    module.exports = this.browser;
+  }
 }
