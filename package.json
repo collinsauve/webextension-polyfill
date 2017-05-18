@@ -1,10 +1,10 @@
 {
-  "name": "collinsauve-webextension-polyfill",
+  "name": "webextension-polyfill",
   "version": "0.1.0-30",
   "description": "A lightweight polyfill library for Promise-based WebExtension APIs in Chrome.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mozilla/webextension-polyfill.git"
+    "url": "git+https://github.com/collinsauve/webextension-polyfill.git"
   },
   "author": "Mozilla",
   "license": "MPL-2.0",
